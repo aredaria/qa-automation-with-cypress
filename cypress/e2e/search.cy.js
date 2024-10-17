@@ -50,8 +50,8 @@ describe("search from home page", () => {
       .contains(testData.location, { matchCase: false })
       .should("be.visible");
   });
-  
-  it.only("should search with empty title and location fields", () => {
+
+  it("should search with empty title and location fields", () => {
     homePage.clickSearchBtn();
     cy.url().should("include", `search?base_query=&loc_query=`);
     searchResultPage.jobList.children().should("not.exist");
