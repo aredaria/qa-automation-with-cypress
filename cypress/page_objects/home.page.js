@@ -1,3 +1,5 @@
+import globalElements from "../fixtures/globalElements.json"
+
 class HomePage{
     get titleInput(){
         return cy.get("#homepage #search_typeahead"); 
@@ -9,7 +11,7 @@ class HomePage{
         return cy.get("#search-button");
     }
     get acceptCookiesBtn(){
-        return cy.get("#btn-accept-cookies");
+        return cy.get(`#${globalElements.acceptCookiesBntId}`);
     }
 
     typeInTitle(text) {
