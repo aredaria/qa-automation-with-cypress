@@ -1,0 +1,24 @@
+Amazon Jobs Test Automation Project
+
+This project contains automated tests for the Amazon Jobs website, built with JavaScript and Cypress. The project aims to validate key functionalities of the site, ensuring a smooth and user-friendly experience.
+This repository is intended for anyone looking to automate test cases on the Amazon Jobs site using Cypress. To get started, make sure you have Node.js and Cypress installed.
+__________________________________________________
+Installation
+
+Clone this repository to your local machine, and then install the dependencies:
+
+git clone <repo-url>
+cd <your-repo-directory>
+npm install
+__________________________________________________
+
+Running the Tests
+
+To run the tests, use the following commands:
+Headless mode:
+npx cypress run
+
+Open Cypress test runner:
+npx cypress open
+From the Cypress test runner, select the test you want to execute.
+__________________________________________________
