@@ -1,5 +1,4 @@
 import url from "../fixtures/urls.json";
-import globalElements from "../fixtures/globalElements.json"
 
 class SearchResultPage {
   get jobList() {
@@ -13,9 +12,6 @@ class SearchResultPage {
   }
   get jobContentElement() {
     return cy.get("#job-detail-body .content");
-  }
-  get acceptCookiesBtn() {
-    return cy.get(`#${globalElements.acceptCookiesBntId}`);
   }
 
   openSearchPage() {
@@ -34,10 +30,6 @@ class SearchResultPage {
 
   openFirstJobTile() {
     this.firstJobTile.find("a").first().click();
-  }
-
-  clickAcceptCookiesBtn() {
-    this.acceptCookiesBtn.click();
   }
 }
 

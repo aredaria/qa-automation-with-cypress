@@ -1,11 +1,12 @@
 import searchResultPage from "../page_objects/searchResult.page"
 import testData from "../fixtures/testData.json"
+import helper from "../page_objects/helper";
 
 describe("should use filters on the search page", () => {
 
     beforeEach(() => {
         searchResultPage.openSearchPage();
-        searchResultPage.clickAcceptCookiesBtn();
+        helper.clickAcceptCookiesBtn();
     })
     it.only("should filter by Job Type", () => {
         searchResultPage.chooseJobType(testData["job type"]);

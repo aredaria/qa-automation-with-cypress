@@ -1,12 +1,13 @@
 import homePage from "../page_objects/home.page";
 import testData from "../fixtures/testData.json";
 import searchResultPage from "../page_objects/searchResult.page";
+import helper from "../page_objects/helper";
 
 describe("search from home page", () => {
 
   beforeEach(() => {
     cy.visit("");
-    homePage.clickAcceptCookiesBtn();
+    helper.clickAcceptCookiesBtn();
   });
 
   it("should search by title/keyword", () => {

@@ -1,5 +1,3 @@
-import globalElements from "../fixtures/globalElements.json"
-
 class HomePage{
     get titleInput(){
         return cy.get("#homepage #search_typeahead"); 
@@ -9,9 +7,6 @@ class HomePage{
     }
     get searchBtn(){
         return cy.get("#search-button");
-    }
-    get acceptCookiesBtn(){
-        return cy.get(`#${globalElements.acceptCookiesBntId}`);
     }
 
     typeInTitle(text) {
@@ -25,10 +20,5 @@ class HomePage{
     clickSearchBtn(){
         this.searchBtn.click();
     }
-
-    clickAcceptCookiesBtn(){
-        this.acceptCookiesBtn.click();
-    }
-
 }
 export default new HomePage();
