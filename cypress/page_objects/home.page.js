@@ -1,34 +1,24 @@
-import globalElements from "../fixtures/globalElements.json"
-
 class HomePage{
-    get titleInput(){
+    get titleInp(){
         return cy.get("#homepage #search_typeahead"); 
     }
-    get locationInput(){
+    get locationInp(){
         return cy.get("#homepage #location-typeahead");
     }
     get searchBtn(){
         return cy.get("#search-button");
     }
-    get acceptCookiesBtn(){
-        return cy.get(`#${globalElements.acceptCookiesBntId}`);
-    }
 
     typeInTitle(text) {
-        this.titleInput.type(text);
+        this.titleInp.type(text);
     }
 
     typeInLocation(location){
-        this.locationInput.type(location);
+        this.locationInp.type(location);
     }
 
     clickSearchBtn(){
         this.searchBtn.click();
     }
-
-    clickAcceptCookiesBtn(){
-        this.acceptCookiesBtn.click();
-    }
-
 }
 export default new HomePage();

@@ -1,21 +1,17 @@
 import url from "../fixtures/urls.json";
-import globalElements from "../fixtures/globalElements.json"
 
 class SearchResultPage {
-  get jobList() {
+  get jobLst() {
     return cy.get(".job-tile-lists");
   }
   get firstJobTile() {
     return cy.get(".job-tile-lists div.job-tile").first();
   }
-  get jobTypeFilter() {
+  get jobTypeFltr() {
     return cy.get("#desktopFilter_job_type_filter");
   }
-  get jobContentElement() {
-    return cy.get("#job-detail-body .content");
-  }
-  get acceptCookiesBtn() {
-    return cy.get(`#${globalElements.acceptCookiesBntId}`);
+  get jobContentElem() {
+    return cy.get("#job-detail");
   }
 
   openSearchPage() {
@@ -23,7 +19,7 @@ class SearchResultPage {
   }
 
   chooseJobType(jobType) {
-    this.jobTypeFilter
+    this.jobTypeFltr
       .find(".checkbox-option.btn")
       .filter((index, el) => {
         return Cypress.$(el).text().includes(jobType);
@@ -34,10 +30,6 @@ class SearchResultPage {
 
   openFirstJobTile() {
     this.firstJobTile.find("a").first().click();
-  }
-
-  clickAcceptCookiesBtn() {
-    this.acceptCookiesBtn.click();
   }
 }
 
