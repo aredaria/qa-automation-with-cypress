@@ -1,16 +1,16 @@
 import url from "../fixtures/urls.json";
 
 class SearchResultPage {
-  get jobList() {
+  get jobLst() {
     return cy.get(".job-tile-lists");
   }
   get firstJobTile() {
     return cy.get(".job-tile-lists div.job-tile").first();
   }
-  get jobTypeFilter() {
+  get jobTypeFltr() {
     return cy.get("#desktopFilter_job_type_filter");
   }
-  get jobContentElement() {
+  get jobContentElem() {
     return cy.get("#job-detail-body .content");
   }
 
@@ -19,7 +19,7 @@ class SearchResultPage {
   }
 
   chooseJobType(jobType) {
-    this.jobTypeFilter
+    this.jobTypeFltr
       .find(".checkbox-option.btn")
       .filter((index, el) => {
         return Cypress.$(el).text().includes(jobType);

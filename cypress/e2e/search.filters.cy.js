@@ -11,7 +11,7 @@ describe("should use filters on the search page", () => {
     it.only("should filter by Job Type", () => {
         searchResultPage.chooseJobType(testData["job type"]);
         searchResultPage.openFirstJobTile();
-        searchResultPage.jobContentElement.should('contain', `${testData["job type"].split(' ')[0]}`)
-        searchResultPage.jobContentElement.should('contain', `${testData["job type"].split(' ')[1]}`)
+        searchResultPage.jobContentElem.should('contain', `${testData["job type"].split(' ')[0]}`)
+        searchResultPage.jobContentElem.should('contain', `${testData["job type"].split(' ')[1]}`)
     })
 })
