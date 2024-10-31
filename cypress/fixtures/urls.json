@@ -1,3 +1,5 @@
 {
-    "searchPage" : "/search?base_query=&loc_query="
+    "searchPage" : "/search?base_query=&loc_query=",
+    "searchByTitle/Description": "base_query=",
+    "searchByLocation": "loc_query="
 }

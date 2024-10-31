@@ -2,6 +2,7 @@ import homePage from "../page_objects/home.page";
 import testData from "../fixtures/testData.json";
 import searchResultPage from "../page_objects/searchResult.page";
 import helper from "../page_objects/helper";
+import urls from "../fixtures/urls.json"
 
 describe("search from home page", () => {
 
@@ -13,7 +14,7 @@ describe("search from home page", () => {
   it("should search by title/keyword", () => {
     homePage.typeInTitle(testData.title);
     homePage.clickSearchBtn();
-    cy.url().should("include", `search?base_query=${testData.title}`);
+    cy.url().should("include", `${urls["searchByTitle/Description"]}${testData.title}`);
     searchResultPage.firstJobTile
       .contains(testData.title, { matchCase: false })
       .should("be.visible");
@@ -26,7 +27,7 @@ describe("search from home page", () => {
     homePage.clickSearchBtn();
     cy.url().should(
       "include",
-      `search?base_query=&loc_query=${testData.location.replace(" ", "+")}`
+      `${urls.searchByLocation}${testData.location.replace(" ", "+")}`
     );
     searchResultPage.firstJobTile
       .contains(testData.location, { matchCase: false })
@@ -39,10 +40,10 @@ describe("search from home page", () => {
     homePage.clickSearchBtn();
     cy.waitForStableDOM();
     homePage.clickSearchBtn();
-    cy.url().should("include", `base_query=${testData.title}`);
+    cy.url().should("include", `${urls["searchByTitle/Description"]}${testData.title}`);
     cy.url().should(
       "include",
-      `loc_query=${testData.location.replace(" ", "+")}`
+      `${urls.searchByLocation}${testData.location.replace(" ", "+")}`
     );
     searchResultPage.firstJobTile
       .contains(testData.title, { matchCase: false })
@@ -54,7 +55,7 @@ describe("search from home page", () => {
 
   it("should search with empty title and location fields", () => {
     homePage.clickSearchBtn();
-    cy.url().should("include", `search?base_query=&loc_query=`);
-    searchResultPage.jobLst.children().should("not.exist");
+    cy.url().should("include", `${urls["searchByTitle/Description"]}&${urls.searchByLocation}`);
+    searchResultPage.jobLst.children().should("exist");
   });
 });

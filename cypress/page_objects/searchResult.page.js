@@ -11,7 +11,7 @@ class SearchResultPage {
     return cy.get("#desktopFilter_job_type_filter");
   }
   get jobContentElem() {
-    return cy.get("#job-detail-body .content");
+    return cy.get("#job-detail");
   }
 
   openSearchPage() {
